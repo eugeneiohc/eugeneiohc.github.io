@@ -1,0 +1,6 @@
+{
+  "packages/**/*.{ts,tsx}": [
+    "pretty-quick --staged",
+    "eslint --fix"
+  ]
+}
