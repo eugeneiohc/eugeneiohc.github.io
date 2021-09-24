@@ -1,5 +1,5 @@
 {
-  "*": [
+  "./src/*": [
     "pretty-quick --staged",
     "eslint --fix"
   ]
