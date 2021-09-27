@@ -13,7 +13,7 @@ const baseFontStyle = {
 };
 
 const textStyles = {
-  default: {
+  body: {
     ...baseFontStyle,
   },
   sm: {
