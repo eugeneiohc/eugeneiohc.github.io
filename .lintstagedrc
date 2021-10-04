@@ -1,5 +1,5 @@
 {
-  "./src/*": [
+  "./src/*.tsx": [
     "pretty-quick --staged",
     "eslint --fix"
   ]

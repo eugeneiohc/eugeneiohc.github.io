@@ -8,7 +8,7 @@ export const ThemeProvider: FC = ({ children }) => (
   <EmotionThemeProvider theme={theme}>
     <Global
       styles={css`
-        @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shippori+Mincho+B1:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
         body {
           padding: 0;
           margin: 0;
