@@ -1,0 +1,99 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="intro">
+				<p>
+					I'm Eugene. I build data infrastructure — currently identity, normalization, and migration work over
+					~200M property records at a small real-estate-sourcing company. This is where I write about the
+					harder architecture decisions.
+				</p>
+			</section>
+
+			<section class="posts">
+				<h2>Writing</h2>
+				<ul>
+					{
+						posts.map((post) => (
+							<li>
+								<a href={`/blog/${post.id}/`}>
+									<span class="title">{post.data.title}</span>
+									<FormattedDate date={post.data.pubDate} />
+								</a>
+								{post.data.description && <p class="description">{post.data.description}</p>}
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</main>
+		<Footer />
+		<style>
+			.intro {
+				max-width: 65ch;
+				margin: 0 auto 3rem;
+				font-size: 1.1rem;
+				line-height: 1.6;
+			}
+			.posts {
+				max-width: 65ch;
+				margin: 0 auto;
+			}
+			.posts h2 {
+				font-size: 1.2rem;
+				margin-bottom: 1.5rem;
+				color: rgb(var(--gray-dark));
+			}
+			.posts ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+			.posts li {
+				margin-bottom: 2rem;
+			}
+			.posts li a {
+				display: flex;
+				justify-content: space-between;
+				align-items: baseline;
+				gap: 1rem;
+				text-decoration: none;
+				color: inherit;
+			}
+			.posts li a:hover .title {
+				color: var(--accent);
+			}
+			.posts li .title {
+				font-weight: 600;
+				font-size: 1.05rem;
+			}
+			.posts li .description {
+				margin: 0.25rem 0 0;
+				color: rgb(var(--gray));
+				font-size: 0.95rem;
+			}
+			.posts li time {
+				color: rgb(var(--gray));
+				font-size: 0.85rem;
+				white-space: nowrap;
+			}
+		</style>
+	</body>
+</html>

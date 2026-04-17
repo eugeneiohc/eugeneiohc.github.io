@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/BlogPost.astro';
+---
+
+<Layout
+	title="About"
+	description="About Eugene Choi"
+	pubDate={new Date('April 16 2026')}
+>
+	<p>
+		I'm a data engineer. I currently lead data infrastructure at a small real-estate-sourcing company — address
+		normalization at ~200M records, identity design across Elasticsearch and Postgres, and the kind of migration work
+		where the wrong call costs you six months.
+	</p>
+
+	<p>
+		This blog is where I work through the harder architecture decisions in public. I write to sharpen my own thinking
+		and to invite feedback from people who've solved similar problems at different scales.
+	</p>
+
+	<p>
+		You can find me on <a href="https://github.com/eugeneiohc">GitHub</a>. If you want to talk shop, email me at
+		eugene [at] goliathdata [dot] com.
+	</p>
+</Layout>
