@@ -6,4 +6,6 @@ pubDate: 'Apr 16 2026'
 
 I'm starting this blog to write about the systems I build — mostly data engineering, mostly at scale, mostly the problems that don't have clean answers.
 
+Also, it's my birthday today. Seemed like a fine occasion to finally stop pushing this off.
+
 First real post coming soon: what 200 million property addresses taught me about primary keys.
