@@ -1,0 +1,17 @@
+---
+title: 'Background on why DE is goated'
+description: 'How I got into DE'
+pubDate: 'Apr 17 2026'
+---
+
+Just want to give some background on DE and why I love it so much.
+
+Especially during this new era of AI coding agents going crazy with SWE and continually bringing down the cost to create software/webapps etc, I think data engineering is getting even more important to understand. You can no longer build a company with a technical moat if it's just based on interacting with a webapp. Having a very strong fundamental data layer with DEs that understand the life cycle of maintaining it will set companies that succeed from companies that fail. Our CEO recognizes this and picked me up in what I would think a relatively early part of our startup development.
+
+I started part time work at my current company in about May/June of 2025 and have shortly joined full time in July 2025. At my previous company I had been working with social media data where we had to transform and normalize billions of rows together and rejoin for geographic correlation. Because of this very challenging but rewarding experience, I will admit I had a large ego going into the real estate space where the current problem of having only 300 million addresses in the country didn't intimidate me at all. Maybe that's what my CEO saw in me is the confidence to execute because at the end of the day startups that succeed don't have smarter engineers than others they have engineers that can outwork anyone else while everyone else doubts them.
+
+Going back in time a bit, my first exposure to DE was designing a very textbook datamart for a commerce company. They had a very simple business model they had products and regional salesmen that would go out and sell those products. From a data perspective this might be something that students learn in school, but going from a 10 minute+ loading time analytics table in postgres to unlocking CDC and not only speeding up analytical queries but showing the company that not accounting for type 2 SCDs actually made their reports incorrect is what I think got me into DE. Data engineering will always be sort of an underrated skill, but my hope is that maybe people will be more mature with it and overall bring more value to execution speed, maybe not as much as LLMs had in SWE but levelling up understanding to value it more. 
+
+Every time I talk to someone about columnar storage, it almost feels like I'm spreading the gospel and opening their mind to the possibility of rethinking what a database is. Querying data straight from s3/gcs is not something a huge amount of SWEs ever need to think about and it's one of the most powerful tools that have come up in the last decade or so. Taking advantage of a well understood data layer can not only make a company more efficient but more importantly more competitive to ultimately deliver value faster and cheaper than others. 
+
+I'm not entirely sure where I want to take this, mostly just for my own sanity because I have such strong volition that this company will be a billion dollars and strong DE will be the backbone of it. Real estate giants that have monopolized data for decades and decades and deliver in archaic ways is a huge value opportunity, and by writing about the problems that I face and thoughts that I have about DE and the new AI coding landscape will bring some humility in my decision making and show people that passion and work can beat these giants.
