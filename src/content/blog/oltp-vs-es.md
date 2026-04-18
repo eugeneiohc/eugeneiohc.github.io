@@ -1,0 +1,17 @@
+---
+title: 'Debate your coworkers'
+description: 'Some early thoughts and regrets from going headfirst into design'
+pubDate: 'Apr 19 2026'
+---
+
+Once every few weeks either me or another coworker will mention the tradeoffs between postgres (i'll refer to as pg) and elastic search (i'll refer to as es). And of course you can have chatgpt answer these questions for you; es excels at highly complex filtering logic, tons of nested ors, advanced matching on arrays and strings etc, pg is oltp so bis for acid and basically the only thing you should be using for production apps. I honestly love talking about these nuances because a lot of SWEs only know and live by OLTP dbs, and honestly don't ever need to learn or understand anything past that and will have a fulfilling successful career. That ego carried into my decision to go headfirst into building this without much design.
+
+As I'm tackling this addresses problem and going through playing with normalizing stuff with spark/bq etc., I basically chose to place all the addresses in elastic search. It all made sense in theory; a wicked fast index, I can reindex the entire country in a matter of hours and serve it to our customers with a near seamless cutover. However, as alarm bells may be ringing if you're a DE and even a SWE; having two databases attempting to represent the same thing.. you better know what you're doing. Another reason I chose this was because we only had 5 million addresses in PG at the time; and 200+ million total addresse and parcels across the country and the scale of this sort of rnd period where I didn't really know how I wanted to design it, I hastily chose ES. To be fair, the problems did not come from that fact that we chose 2 DBs, I would actually argue that it was the correct decision it's just the way I designed normalization of these and the natural desyncing that I did not consider/design for.
+
+If you want to be an optimist you could say like "at least you didn't put all 200 million in postgres immediately," which I guess is true, but taking a step back there were some poor decisions, which (thankfully) aren't completely irreversible decisions. I'll get to the main one in another post soon because that should be focused on that.
+
+The biggest takeaway from this if anything is that I've been quite bad at making plans/project proposals. I've never worked at a large company, and I would pessimistically say that you move slow at these larger companies but there are some habits that are pounded into you for a reason. Design docs and having engineers have another pass/debate your decision making is one of the toughest things that I'm having trouble with here. I'm alone as a data engineer and others look up to me when making decisions in data. I barely have 5 years under my belt so I'm nowhere near staff level.
+
+No matter what specialty you are in coding you should be able to breakdown any problem into terms that any engineer can understand and contribute to. They say that delegating is one of the toughest transitions from an IC to a leadership role, and I fear I am stuck on the former (for now at least).
+
+The great thing about a startup is that because we are so small that I can never be doing DE work 100% of the time, which would cause true isolation from the rest of the app. Naturally there will be intertwining between the two and part of being a better engineer is learning to knowledge share as you build.
