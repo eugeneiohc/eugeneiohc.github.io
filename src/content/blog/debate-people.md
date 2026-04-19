@@ -1,7 +1,7 @@
 ---
 title: 'Debate your coworkers'
 description: 'Some early thoughts and regrets from going headfirst into design'
-pubDate: 'Apr 19 2026'
+pubDate: 'Apr 18 2026'
 ---
 
 Once every few weeks either me or another coworker will mention the tradeoffs between postgres (i'll refer to as pg) and elastic search (i'll refer to as es). And of course you can have chatgpt answer these questions for you; es excels at highly complex filtering logic, tons of nested ors, advanced matching on arrays and strings etc, pg is oltp so bis for acid and basically the only thing you should be using for production apps. I honestly love talking about these nuances because a lot of SWEs only know and live by OLTP dbs, and honestly don't ever need to learn or understand anything past that and will have a fulfilling successful career. That ego carried into my decision to go headfirst into building this without much design.
